@@ -36,3 +36,22 @@ To start the Framework, You need to run this command
 You will see a menu like this
 
 ![Capture](https://user-images.githubusercontent.com/67494275/90904157-89afac80-e3ec-11ea-8e71-e3e3db914f26.PNG)
+
+To Generate **Malicious Payload**, Type 1
+
+To use **Listeners**, Type 2
+
+To use **Help**, Type 3
+
+To **Exit Framework**, Type 4
+
+# Evasion 
+You will get a view like this when you enter the Evasion Menu
+
+I recommend to use In-Built Avyukt Payloads as they are Undetectable and ByPass many Famous Anti Viruses.
+
+# Handlers
+You will see a view like this after you enter the Handler Menu
+
+What is Avyukt Handler?
+  * Avyukt Handler is the Default Handler for the In-Built Avyukt Payloads which were Programmed by me
