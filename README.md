@@ -26,4 +26,8 @@ Simply type this command to run the setup
 
 `python ./setup.py`
 
+![Capture](https://user-images.githubusercontent.com/67494275/90903494-a26b9280-e3eb-11ea-9d53-f0548d4051dd.PNG)
+
+# Getting Started with Avyukt
+
 
