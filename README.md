@@ -29,5 +29,10 @@ Simply type this command to run the setup
 ![Capture](https://user-images.githubusercontent.com/67494275/90903494-a26b9280-e3eb-11ea-9d53-f0548d4051dd.PNG)
 
 # Getting Started with Avyukt
+To start the Framework, You need to run this command
 
+`python ./Avyukt.py`
 
+You will see a menu like this
+
+![Capture](https://user-images.githubusercontent.com/67494275/90904157-89afac80-e3ec-11ea-8e71-e3e3db914f26.PNG)
