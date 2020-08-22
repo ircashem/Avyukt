@@ -64,4 +64,4 @@ What is NetCat Handler?
   * There are some payloads in the Framework which require NetCat as a listener
 
 What is Metasploit?
-  * Common man, You must be knowing about Metasploit
+  * Come on man, You must be knowing about Metasploit, I dont have to tell it!
