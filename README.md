@@ -63,6 +63,8 @@ For Eg. I was to use the 1st Payload, Simply type `1` or any other number in the
 # Handlers
 You will see a view like this after you enter the Handler Menu
 
+![Capture](https://user-images.githubusercontent.com/67494275/90950451-2b77dd80-e46f-11ea-90da-de2fdee3c237.PNG)
+
 What is Avyukt Handler?
   * Avyukt Handler is the Default Handler for the In-Built Avyukt Payloads which were Programmed by me
   * Payloads like `python/Avyukt/reverse_tcp` are compatible with Avyukt Handler
