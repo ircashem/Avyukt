@@ -593,7 +593,7 @@ def menu():
         print(Fore.RED + "\t\t4) Exit" + "\t\tExit the framework")
         print(Fore.WHITE + "\n\tMenu Info")
         print(Fore.WHITE + "\n\t\tNumber of Listeners : " + Fore.GREEN + "3")
-        print(Fore.WHITE + "\t\tNumber of Payloads : " + Fore.GREEN + "10")
+        print(Fore.WHITE + "\t\tNumber of Payloads : " + Fore.GREEN + "12")
         command = raw_input(Fore.WHITE + "\nAvyukt>: ")
 
         if "1" in command:
