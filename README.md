@@ -56,9 +56,13 @@ You will get a view like this when you enter the Evasion Menu
 
 Please remember that the Framework is still under Beta Developement, More Upgrades and Updates are going to come soon
 
-**For the best results, Please use In-Built Avyukt Payloads as they are the best in Bypassing Anti-Virus. New implementations are going to be added soon**
+**For the best results, Please use 1st payload or In-Built Avyukt Payloads as they are the best in Bypassing Anti-Virus. New implementations are going to be added soon**
 
 For Eg. I was to use the 1st Payload, Simply type `1` or any other number in the menu you wanna use
+
+After you choose the payload you want to use, You will have to enter values for `Name`, `LHOST` and `LPORT`. After you have given values for these parameters, You simply have to choose `y` or `n` if you have to add icon to the Executable which will be generated. `Please note only .ico files are supported`. After you enter the values you have to give the raw python script path which will be generated in the `Output` Folder. Simple type `Output/<your scriptname.py>`. Now, You have to enter the path to the `.ico` file and the Framework will do the rest.
+
+![Capture](https://user-images.githubusercontent.com/67494275/90959231-5a19a680-e4b7-11ea-90db-5fe2bc62ba31.PNG)
 
 # Handlers
 You will see a view like this after you enter the Handler Menu
@@ -75,6 +79,14 @@ What is NetCat Handler?
 
 What is Metasploit?
   * Come on man, You must be knowing about Metasploit, I dont have to tell it!
+  
+# Features of Avyukt Payload
+Here are some of the features which are found in the default Avyukt Payloads
+  * Screenshot Ability
+  * Upload Files
+  * Download Files
+  * Webcam Hacking and streaming live (I have not added it in this release as it is not stable, I will add it in the next update)
+  * Execute any System Command (notepad.exe or any other system command)
 
 # Suggestion Form
 Having Ideas for Framework? Don't be shy! Submit them here 
