@@ -48,7 +48,9 @@ To **Exit Framework**, Type 4
 # Evasion 
 You will get a view like this when you enter the Evasion Menu
 
-I recommend to use In-Built Avyukt Payloads as they are Undetectable and ByPass many Famous Anti Viruses.
+I recommend to use In-Built Avyukt Payloads as they are Undetectable and Bypasses many Famous Anti Viruses.
+
+Please make sure that the Framework is still under Beta Developement, More Upgrades and Updates are going to come soon
 
 # Handlers
 You will see a view like this after you enter the Handler Menu
