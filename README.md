@@ -9,6 +9,8 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 **Please keep in mind that my Framework nor me is going to be responsible for Illegal Purposes, This is only made for Penetration Testing Purpose for White-Hat Hackers**
 
+**I have not added the WebCam Streamer for Avyukt Payloads for now as you must have seen it in the video tutorial as the WebCam streamer is not stable for everyone right now, I will surely release it in the next Version.**
+
 `Framework Version : 1.1.0 (Beta)`
 
 `Developer : Vedant-Bhalgama`
