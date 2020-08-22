@@ -39,6 +39,8 @@ You will see a menu like this
 
 ![Capture](https://user-images.githubusercontent.com/67494275/90904157-89afac80-e3ec-11ea-8e71-e3e3db914f26.PNG)
 
+If you run the Framework for the first time, Directory called `Output` will be created
+
 To Generate **Malicious Payload**, Type 1
 
 To use **Listeners**, Type 2
