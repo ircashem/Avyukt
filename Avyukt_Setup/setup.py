@@ -51,8 +51,10 @@ try:
             print(Fore.CYAN + "\n\t[+] Installing PyInstaller")
             print(Fore.YELLOW + "\n")
             os.system("\n\nwine python.exe -m pip install pyinstaller")
+            print(Fore.CYAN + "\n\t[+] Installing PyautoGUI")
+            os.system("wine python.exe -m pip install pyautogui")
+            os.system("pip install pyautogui")
             raw_input(Fore.GREEN + "\n[+] Setup was completed, Press enter to continue")
-            raw_input("")
             os.system("reset")
 
         if "n" in start_installation:
