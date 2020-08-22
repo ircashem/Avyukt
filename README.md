@@ -28,7 +28,7 @@ Simply type this command to run the setup
 
 `python ./setup.py`
 
-![Capture](https://user-images.githubusercontent.com/67494275/90903494-a26b9280-e3eb-11ea-9d53-f0548d4051dd.PNG)
+![Capture](https://user-images.githubusercontent.com/67494275/90950247-6da01f80-e46d-11ea-8d7d-88a161fc3968.PNG)
 
 # Getting Started with Avyukt
 To start the Framework, You need to run this command
