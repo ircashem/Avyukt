@@ -92,3 +92,6 @@ Here are some of the features which are found in the default Avyukt Payloads
 Having Ideas for Framework? Don't be shy! Submit them here 
 
 `https://docs.google.com/forms/d/1YKYxLAYj0R0P5TS3bnnPkdGVKZuiS6rrWCLgH_2Kzao/edit`
+
+# Video Tutorial for Framework 
+`coming soon ;)`
