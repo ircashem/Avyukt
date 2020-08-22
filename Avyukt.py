@@ -545,7 +545,7 @@ def list_info():
     print(Fore.WHITE + "\n\t\t[10] python/meterpreter/reverse_http")
     print(Fore.RED + "\n\t\tLinux Backdoors" + Fore.WHITE + "(Good)")
     print(Fore.WHITE + "\n\t\t[11] bin/bash shell")
-    print(Fore.RED + "\n\t\tAndroid Backdoors" + Fore.WHITE + "(G)")
+    print(Fore.RED + "\n\t\tAndroid Backdoors" + Fore.WHITE + "(Good)")
     print(Fore.WHITE + "\n\t\t[12] android/meterpreter/reverse_tcp")
     print(Fore.WHITE + "\n\t[+] Press Enter to return to Menu")
 
