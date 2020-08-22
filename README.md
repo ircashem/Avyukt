@@ -70,4 +70,5 @@ What is Metasploit?
 
 # Suggestion Form
 Having Ideas for Framework? Don't be shy! Submit them here 
-https://docs.google.com/forms/d/1sL-ux2mMWdiTj_KyhjaLktxDbmPepF94XGZRUaSMv1U/viewform?edit_requested=true
+
+`https://docs.google.com/forms/d/1YKYxLAYj0R0P5TS3bnnPkdGVKZuiS6rrWCLgH_2Kzao/edit`
