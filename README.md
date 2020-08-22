@@ -15,7 +15,7 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 `Framework Testers : Vedant-Bhalgama and GOWTHAM-OFFICIAL-PGN`
 
-# Setting Up with Avyukt
+# Setting Up Avyukt
 To use the Framework, You can simply download it as a ZIP File or you can clone it using this command
 
 `git clone https://github.com/Vedant-Bhalgama/Avyukt.git`
@@ -55,3 +55,11 @@ You will see a view like this after you enter the Handler Menu
 
 What is Avyukt Handler?
   * Avyukt Handler is the Default Handler for the In-Built Avyukt Payloads which were Programmed by me
+  * Payloads like `windows/avyukt/reverse_tcp` are compatible with Avyukt Handler
+  
+What is NetCat Handler?
+  * NetCat is a very popular tool which you must be knowing.
+  * There are some payloads in the Framework which require NetCat as a listener
+
+What is Metasploit?
+  * Common man, You must be knowing about Metasploit
