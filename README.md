@@ -28,7 +28,7 @@ Simply type this command to run the setup
 
 `python ./setup.py`
 
-![Capture](https://user-images.githubusercontent.com/67494275/90950247-6da01f80-e46d-11ea-8d7d-88a161fc3968.PNG)
+![Capture](https://user-images.githubusercontent.com/67494275/90950281-ad670700-e46d-11ea-8f8f-270600a620b9.PNG)
 
 # Getting Started with Avyukt
 To start the Framework, You need to run this command
@@ -52,16 +52,20 @@ To **Exit Framework**, Type 4
 # Evasion 
 You will get a view like this when you enter the Evasion Menu
 
-I recommend to use In-Built Avyukt Payloads as they are Undetectable and Bypasses many Famous Anti Viruses.
+![Capture](https://user-images.githubusercontent.com/67494275/90950360-2cf4d600-e46e-11ea-9273-002bb921f4dc.PNG)
 
-Please make sure that the Framework is still under Beta Developement, More Upgrades and Updates are going to come soon
+Please remember that the Framework is still under Beta Developement, More Upgrades and Updates are going to come soon
+
+**For the best results, Please use In-Built Avyukt Payloads as they are the best in Bypassing Anti-Virus. New implementations are going to be added soon**
+
+For Eg. I was to use the 1st Payload, Simply type `1` or any other number in the menu you wanna use
 
 # Handlers
 You will see a view like this after you enter the Handler Menu
 
 What is Avyukt Handler?
   * Avyukt Handler is the Default Handler for the In-Built Avyukt Payloads which were Programmed by me
-  * Payloads like `windows/avyukt/reverse_tcp` are compatible with Avyukt Handler
+  * Payloads like `python/Avyukt/reverse_tcp` are compatible with Avyukt Handler
   
 What is NetCat Handler?
   * NetCat is a very popular tool which you must be knowing.
