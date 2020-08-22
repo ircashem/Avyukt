@@ -67,3 +67,7 @@ What is NetCat Handler?
 
 What is Metasploit?
   * Come on man, You must be knowing about Metasploit, I dont have to tell it!
+
+# Suggestion Form
+Having Ideas for Framework? Don't be shy! Submit them here 
+https://docs.google.com/forms/d/1sL-ux2mMWdiTj_KyhjaLktxDbmPepF94XGZRUaSMv1U/viewform?edit_requested=true
