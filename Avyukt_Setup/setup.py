@@ -1,19 +1,13 @@
-try:
-    import subprocess
-    import re
-    import platform
-    import time
-    import os
-    import sys
-    from colorama import For
-    import requests
-    import pyfiglet
-except ImportError:
-    subprocess.call("pip install colorama", shell=True)
-    subprocess.call("pip install requests", shell=True)
 
-error_message = Fore.RED
-success = Fore.GREEN
+import subprocess
+import re
+import platform
+import time
+import os
+import sys
+from colorama import Fore
+import requests
+import pyfiglet
 
 try:
     def setup():
