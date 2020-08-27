@@ -95,3 +95,8 @@ Having Ideas for Framework? Don't be shy! Submit them here
 
 # Video Tutorial for Framework 
 `coming soon ;)`
+
+# Special Thanks To
+   * `GOWTHAM-OFFICIAL-PGN`
+   * `Diego Perez`
+   * `Zaid Sabih`
