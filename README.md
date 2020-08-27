@@ -101,4 +101,5 @@ Having Ideas for Framework? Don't be shy! Submit them here
    * `Diego Perez`
    * `Zaid Sabih`
 
-Made with ❤️
+
+**Made with ❤️ by Vedant Bhalgama**
