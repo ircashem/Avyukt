@@ -96,10 +96,17 @@ Having Ideas for Framework? Don't be shy! Submit them here
 # Video Tutorial for Framework 
 `coming soon ;)`
 
+# New implementations going to be added next 
+   * Avyukt Payloads Payloads will be also available for platforms such as Linux
+   * More Undetectable Payloads going to be added 
+
+
 # Special Thanks To
    * `GOWTHAM-OFFICIAL-PGN`
    * `Diego Perez`
    * `Zaid Sabih`
+   * `Kunal Mangalorekar`
+   * `Dimitris Kalopisis`
 
 
-**Made with ❤️ by Vedant Bhalgama**
+## Made with ❤️ by Vedant Bhalgama ##
