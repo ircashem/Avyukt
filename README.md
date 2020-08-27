@@ -100,3 +100,5 @@ Having Ideas for Framework? Don't be shy! Submit them here
    * `GOWTHAM-OFFICIAL-PGN`
    * `Diego Perez`
    * `Zaid Sabih`
+
+Made with ❤️
