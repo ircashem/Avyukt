@@ -1,6 +1,5 @@
 # Avyukt - Exploitation Framework (Beta Version)
-Avyukt is a Exploitation Framework which can be used to generate Malicious Payloads and exploit Windows OS. For now, I have only released a Beta Version. More updated features
-and better payloads are going to be added soon in the final version.
+Avyukt is a Exploitation Framework which can be used to generate Malicious Payloads and exploit Windows OS. For now, I have only released a **Beta Version** for now. More updated features and better payloads are going to be added soon in the final version.
 
 # General Info about the Framework
 Avyukt is a Framework which can generate Malicious Payloads for getting remote access on Windows Computers
@@ -100,6 +99,7 @@ Having Ideas for Framework? Don't be shy! Submit them here
 # New implementations going to be added next 
    * Avyukt Payloads Payloads will be also available for platforms such as Linux
    * More Undetectable Payloads going to be added 
+   * Webcam Hack will be avail;
 
 
 # Special Thanks To
