@@ -64,6 +64,8 @@ Please remember that the Framework is still under Beta Developement, More Upgrad
 
 **For the best results, Please use 1st payload or In-Built Avyukt Payloads as they are the best in Bypassing Anti-Virus. New implementations are going to be added soon**
 
+**While generating Paylods, Keep a legit name of the Backdoor which is going to be generated as they also help in Bypassing AV, If you keep a name which looks malicious like test.exe or payload.exe it will be easily detected**
+
 For Eg. I was to use the 1st Payload, Simply type `1` or any other number in the menu you wanna use
 
 After you choose the payload you want to use, You will have to enter values for `Name`, `LHOST` and `LPORT`. After you have given values for these parameters, You simply have to choose `y` or `n` if you have to add icon to the Executable which will be generated. `Please note only .ico files are supported`. After you enter the values you have to give the raw python script path which will be generated in the `Output` Folder. Simple type `Output/<your scriptname.py>`. Now, You have to enter the path to the `.ico` file and the Framework will do the rest.
