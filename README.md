@@ -21,6 +21,11 @@ To use the Framework, You can simply download it as a ZIP File or you can clone 
 
 `git clone https://github.com/Vedant-Bhalgama/Avyukt.git`
 
+**Before running the setup.py run these 2 commands first or else you will get error**
+
+`pip install colorama`
+`pip install pyfiglet`
+
 Now, You need to direct to the directory `Avyukt_Setup` to run the setup.py file.
 
 Simply type this command to run the setup
