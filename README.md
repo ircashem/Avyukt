@@ -12,9 +12,10 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 `Framework Version : 1.1.0 (Beta)`
 
-`Developer : Vedant-Bhalgama`
+`Developed by : Vedant-Bhalgama`
 
-`Framework Testers : Vedant-Bhalgama and GOWTHAM-OFFICIAL-PGN`
+`Framework Testers : GOWTHAM-OFFICIAL-PGN`
+
 
 # Setting Up Avyukt
 To use the Framework, You can simply download it as a ZIP File or you can clone it using this command
@@ -93,6 +94,7 @@ Here are some of the features which are found in the default Avyukt Payloads
   * Webcam Hacking and streaming live (I have not added it in this release as it is not stable, I will add it in the next update)
   * Execute any System Command (notepad.exe or any other system command)
   * Directory Navigation (cd command)
+  * Persistent
 
 # Suggestion Form
 Having Ideas for Framework? Don't be shy! Submit them here 
@@ -105,8 +107,16 @@ Having Ideas for Framework? Don't be shy! Submit them here
 # New implementations going to be added next 
    * Avyukt Payloads Payloads will be also available for platforms such as Linux
    * More Undetectable Payloads going to be added 
-   * Webcam Hack will be avail;
+   * Webcam Hack will be available
+   
+# Report Issues
+Found Bugs in the framework? Report them here to help me improve the Framework
 
+`https://github.com/Vedant-Bhalgama/Avyukt/issues`
+
+If no one replies within 24 Hours, Please contact here
+
+`5016.stkabirdio@gmail.com`
 
 # Special Thanks To
    * `GOWTHAM-OFFICIAL-PGN`
