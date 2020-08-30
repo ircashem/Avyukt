@@ -104,7 +104,7 @@ Having Ideas for Framework? Don't be shy! Submit them here
 `https://docs.google.com/forms/d/1YKYxLAYj0R0P5TS3bnnPkdGVKZuiS6rrWCLgH_2Kzao`
 
 # Video Tutorial for Framework 
-`coming soon ;)`
+`https://www.youtube.com/watch?v=ecPv9EEsbnY`
 
 # New implementations going to be added next 
    * Avyukt Payloads Payloads will be also available for platforms such as Linux
