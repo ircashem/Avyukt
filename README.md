@@ -90,13 +90,13 @@ What is Metasploit?
   
 # Features of Avyukt Payload
 Here are some of the features which are found in the default Avyukt Payloads, Avyukt Payloads are programmed by me in Python.
-  * Screenshot Ability
-  * Upload Files
-  * Download Files
-  * Webcam Hacking and streaming live **(I have not added it in this release as it is not stable, I will add it in the next update)**
-  * Execute any System Command (notepad.exe or any other system command)
-  * Directory Navigation (cd command)
-  * Persistent
+  * **Screenshot Ability**
+  * **Upload Files**
+  * **Download Files**
+  * **Webcam Hacking and streaming live (I have not added it in this release as it is not stable, I will add it in the next update)**
+  * **Execute any System Command (notepad.exe or any other system command)**
+  * **Directory Navigation (cd command)**
+  * **Persistent**
 
 # Suggestion Form
 Having Ideas for Framework? Don't be shy! Submit them here 
@@ -109,7 +109,7 @@ Having Ideas for Framework? Don't be shy! Submit them here
 # New implementations going to be added next 
    * Avyukt Payloads Payloads will be also available for platforms such as Linux
    * More Undetectable Payloads going to be added 
-   * Webcam Hack will be available
+   * Webcam Snap (Take images of Target from their WebCam)
    
 # Report Issues
 Found Bugs in the framework? Report them here to help me improve the Framework
