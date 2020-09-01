@@ -93,7 +93,7 @@ Here are some of the features which are found in the default Avyukt Payloads, Av
   * Screenshot Ability
   * Upload Files
   * Download Files
-  * Webcam Hacking and streaming live (I have not added it in this release as it is not stable, I will add it in the next update)
+  * Webcam Hacking and streaming live **(I have not added it in this release as it is not stable, I will add it in the next update)**
   * Execute any System Command (notepad.exe or any other system command)
   * Directory Navigation (cd command)
   * Persistent
