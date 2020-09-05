@@ -110,6 +110,7 @@ Having Ideas for Framework? Don't be shy! Submit them here
    * Avyukt Payloads Payloads will be also available for platforms such as Linux
    * More Undetectable Payloads going to be added 
    * Webcam Snap (Take images of Target from their WebCam)
+   * Automatic Obfuscation will be added (You won't have to enter the path of the script)
    
 # Report Issues
 Found Bugs in the framework? Report them here to help me improve the Framework
