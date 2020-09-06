@@ -464,7 +464,6 @@ vedant_backdoor.run()
         ask_for_icon = raw_input("\nAvyukt>: Do you want to add a icon to the generated EXE? y/n >> ")
         if "y" in ask_for_icon:
             print("\nAvyukt>: Script Path Output/" + name + ".py")
-            ask_path = raw_input("\nAvyukt>: Please enter Script Path >> ")
             ask_icon_path = raw_input("\nAvyukt>: Please enter path to icon (.ico files are only supported) >> ")
             subprocess.call(['wine', '/root/.wine/drive_c/Python27/Scripts/pyinstaller', '--onefile', '--noconsole', '--icon', ask_icon_path, 'Output/' + name + '.py'])
             os.remove("Output/" + name + ".py")
@@ -482,7 +481,6 @@ vedant_backdoor.run()
             print("")
 
         if "n" in ask_for_icon:
-            ask_path = raw_input("\nAvyukt>: Please enter Script Path >> ")
             subprocess.call(['wine', '/root/.wine/drive_c/Python27/Scripts/pyinstaller.exe', '--noconsole', '--onefile', 'Output/' + name + '.py'])
             os.remove("Output/" + name + ".py")
             print(Fore.GREEN + "\nAvyukt>: Backdoor was compiled successfully. Please check Output/dist/" + name + ".exe")
