@@ -10,11 +10,17 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 **I have not added the WebCam Streamer for Avyukt Payloads for now as you must have seen it in the video tutorial as the WebCam streamer is not stable for everyone right now, I will surely release it in the next Version.**
 
-`Framework Version : 1.1.0 (Beta)`
+`Framework Version : 1.1.1 (Beta)`
 
 `Developed by : Vedant-Bhalgama`
 
 `Framework Testers : GOWTHAM-OFFICIAL-PGN`
+
+# Update 1.1.1 (Beta)
+
+* Added Support for Avyukt Linux Backdoors, Avyukt Payloads were only available for Windows, Now available for linux too!
+
+* Automatic Obfuscation Added for Avyukt Payload 1
 
 
 # Setting Up Avyukt
