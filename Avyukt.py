@@ -1035,7 +1035,7 @@ def menu():
 
 def startup():
     os.system("clear")
-    details("1.0 (Beta)", platform.system(), platform.release())
+    details("1.1.1 (Beta)", platform.system(), platform.release())
     clear_screen()
     menu()
 
