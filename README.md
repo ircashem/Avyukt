@@ -20,7 +20,9 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 * Added Support for Avyukt Linux Backdoors, Avyukt Payloads were only available for Windows, Now available for linux too!
 
-* Automatic Obfuscation Added for Avyukt Payload 1
+* Automatic Obfuscation Added for Avyukt Payloads
+
+* Improved code and bugs
 
 
 # Setting Up Avyukt
@@ -113,10 +115,9 @@ Having Ideas for Framework? Don't be shy! Submit them here
 `https://www.youtube.com/watch?v=ecPv9EEsbnY`
 
 # New implementations going to be added next 
-   * Avyukt Payloads Payloads will be also available for platforms such as Linux
    * More Undetectable Payloads going to be added 
    * Webcam Snap (Take images of Target from their WebCam)
-   * Automatic Obfuscation will be added (You won't have to enter the path of the script)
+   * New Listener View
    
 # Report Issues
 Found Bugs in the framework? Report them here to help me improve the Framework
