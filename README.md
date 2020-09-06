@@ -64,7 +64,7 @@ To **Exit Framework**, Type 4
 # Evasion 
 You will get a view like this when you enter the Evasion Menu
 
-![Capture](https://user-images.githubusercontent.com/67494275/90950360-2cf4d600-e46e-11ea-9273-002bb921f4dc.PNG)
+![Screenshot 2020-09-06 at 8 40 14 PM](https://user-images.githubusercontent.com/67494275/92328866-6853ef00-f081-11ea-91e5-64f98f69439b.png)
 
 Please remember that the Framework is still under Beta Developement, More Upgrades and Updates are going to come soon
 
