@@ -18,8 +18,6 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 # Update 1.1.1 (Beta)
 
-* Added Support for Avyukt Linux Backdoors, Avyukt Payloads were only available for Windows, Now available for linux too!
-
 * Automatic Obfuscation Added for Avyukt Payloads
 
 * Improved code and bugs
