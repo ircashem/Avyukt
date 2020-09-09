@@ -22,6 +22,7 @@ The Framework is still under Developement and I am just releasing a Beta Version
 
 * Improved code and bugs
 
+* Added Linux Backdoor (It might contain some bugs, If you find any then please report them to me!)
 
 # Setting Up Avyukt
 To use the Framework, You can simply download it as a ZIP File or you can clone it using this command
