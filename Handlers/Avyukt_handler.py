@@ -39,9 +39,6 @@ class Listener:
         if command[0] == "exit":
             self.connection.close()
             exit()
-        if command[0] == "screenshot":
-            self.reliable_send()
-
         return self.reliable_receive()
 
     def help(self):
