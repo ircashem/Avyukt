@@ -126,6 +126,7 @@ Found Bugs in the framework? Report them here to help me improve the Framework
 If no one replies within 24 Hours, Please contact here
 
 `5016.stkabirdio@gmail.com`
+`pentestmadefun@gmail.com`
 
 # Special Thanks To
    * `GOWTHAM-OFFICIAL-PGN`
