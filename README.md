@@ -112,7 +112,7 @@ Having Ideas for Framework? Don't be shy! Submit them here
 
 # Video Tutorial for Framework
 
-[![Image.jpg(http://img.youtube.com/vi/ecPv9EEsbnY/0.jpg)](https://www.youtube.com/watch?v=ecPv9EEsbnY)
+[Click Here](https://www.youtube.com/watch?v=ecPv9EEsbnY)
 
 # New implementations going to be added next 
    * More Undetectable Payloads going to be added 
