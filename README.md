@@ -114,6 +114,9 @@ Having Ideas for Framework? Don't be shy! Submit them here
 
 [Click Here](https://www.youtube.com/watch?v=ecPv9EEsbnY)
 
+**Is this safe to Click on *Click Here?***
+* The link is fully secure, It directly leads to this YouTube Video Link : https://www.youtube.com/watch?v=ecPv9EEsbnY
+
 # New implementations going to be added next 
    * More Undetectable Payloads going to be added 
    * Webcam Snap (Take images of Target from their WebCam)
